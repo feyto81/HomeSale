@@ -19,17 +19,30 @@ class HomeController extends Controller
     }
     public function postlogin(Request $request)
     {
-        if (Auth::attempt($request->only('email', 'password'))) {
+        // if (Auth::attempt($request->only('email', 'password'))) {
 
-            return redirect('/admin/home');
+        //     return redirect('/admin/home');
+        // // }
+        // // alert()->error('error', 'Email Or Password Not Valid');
+        // return redirect('/admin/login');
+        $input = $request->all();
+
+        $this->validate($request, [
+            'email' => 'required',
+            'password' => 'required',
+            // 'g-recaptcha-response' => 'required|captcha',
+
+        ]);
+        if (Auth::attempt($request->only('email', 'password'))) {
+            $name = auth()->user()->name;
+            return redirect('admin/home')->with(['success' => 'Welcome back ' . $name]);
         }
-        alert()->error('error', 'Email Or Password Not Valid');
-        return redirect('/admin/login');
+        return redirect()->back()->with(['error' => 'Invalid email or password']);
     }
     public function logout()
     {
         Auth::logout();
-        return redirect('admin/login');
+        return redirect('admin/login')->with(['successs' => 'Successfully Logout']);
     }
     public function index()
     {

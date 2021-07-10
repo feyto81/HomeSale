@@ -4,7 +4,7 @@
       <div class="nav-wrapper">
         <ul class="left">
           <li>
-            <h1 class="logo-wrapper"><a class="brand-logo darken-1" href="{{url('admin/home')}}"><img src="{{asset('backend/app-assets/images/logo/materialize-logo.png')}}" alt="materialize logo"><span class="logo-text hide-on-med-and-down">Rumah 123</span></a></h1>
+            <h1 class="logo-wrapper"><a class="brand-logo darken-1" href="{{url('admin/home')}}"><img src="{{asset('backend/app-assets/images/logo/materialize-logo.png')}}" alt="materialize logo"><span class="logo-text hide-on-med-and-down">Home Sale</span></a></h1>
           </li>
         </ul>
         <ul class="navbar-list right">

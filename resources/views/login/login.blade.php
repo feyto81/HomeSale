@@ -26,6 +26,32 @@
   <div class="col s12 m6 l4 z-depth-4 card-panel border-radius-6 login-card bg-opacity-8">
     <form class="login-form" action="postlogin" method="POST">
         @csrf
+        @if(session('successs'))
+        <div class="card-alert card gradient-45deg-green-teal">
+          <div class="card-content white-text">
+            <p>
+              <i class="material-icons">check</i> SUCCESS : {{session('successs')}}</p>
+          </div>
+          <button type="button" class="close white-text" data-dismiss="alert" aria-label="Close">
+            <span aria-hidden="true">×</span>
+          </button>
+        </div>
+        @endif
+        @if (count($errors) > 0)
+        <div class="card-alert card gradient-45deg-amber-amber">
+          <div class="card-content white-text">
+            <p>
+              <i class="material-icons">warning</i> WARNING : <ul>
+                @foreach ($errors->all() as $error)
+                    <li>{{ $error }}</li>
+                @endforeach
+            </ul></p>
+          </div>
+          <button type="button" class="close white-text" data-dismiss="alert" aria-label="Close">
+            <span aria-hidden="true">×</span>
+          </button>
+        </div>
+        @endif
       <div class="row">
           
         <div class="input-field col s12">
@@ -35,17 +61,18 @@
       <div class="row margin">
         <div class="input-field col s12">
           <i class="material-icons prefix pt-2">person_outline</i>
-          <input id="email" type="email" name="email">
+          <input id="email" type="email" name="email" autocomplete="off" placeholder="Enter Email">
           <label for="email" class="center-align">Email</label>
         </div>
       </div>
       <div class="row margin">
         <div class="input-field col s12">
           <i class="material-icons prefix pt-2">lock_outline</i>
-          <input id="password" name="password" type="password">
+          <input id="password" name="password" type="password" autocomplete="off" placeholder="Enter Password">
           <label for="password">Password</label>
         </div>
       </div>
+      
       <div class="row">
         <div class="col s12 m12 l12 ml-2 mt-1">
           <p>
@@ -77,5 +104,15 @@
     <script src="{{asset('backend/app-assets/js/plugins.min.js')}}"></script>
     <script src="{{asset('backend/app-assets/js/search.min.js')}}"></script>
     <script src="{{asset('backend/app-assets/js/custom/custom-script.min.js')}}"></script>
+    <script src="{{asset('backend/app-assets/js/scripts/ui-alerts.min.js')}}"></script>
+    <script>
+      $(document).ready(function() {
+          window.setTimeout(function() {
+              $(".card-alert").fadeTo(500, 0).slideUp(500, function(){
+                  $(this).remove();
+              });
+          }, 2000);
+      });    
+  </script>
   </body>
 </html>

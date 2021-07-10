@@ -5,6 +5,7 @@
   <div class="pt-1 pb-0" id="breadcrumbs-wrapper">
     <!-- Search for small screen-->
     <div class="container">
+     
       <div class="row">
         <div class="col s12 m6 l6">
           <h5 class="breadcrumbs-title"><span>Dashboard</span></h5>
@@ -16,6 +17,21 @@
             
           </ol>
         </div>
+      </div>
+      <div class="row">
+         <div class="col s12">
+             @if(session('success'))
+               <div class="card-alert card gradient-45deg-green-teal">
+                  <div class="card-content white-text">
+                  <p>
+                     <i class="material-icons">check</i> {{session('success')}}</p>
+                  </div>
+                  <button type="button" class="close white-text" data-dismiss="alert" aria-label="Close">
+                  <span aria-hidden="true">×</span>
+                  </button>
+               </div>
+            @endif
+         </div>
       </div>
       <div class="row">
 
@@ -100,7 +116,26 @@
             </div>
          </div>
       </div>
+      
+    </div>
+    <div class="container">
+      <br>
+      <br>
+      <br>
+      <br>
+
     </div>
   </div>
 </div>
 @endsection
+@push('bottom')
+<script>
+   $(document).ready(function() {
+       window.setTimeout(function() {
+           $(".card-alert").fadeTo(500, 0).slideUp(500, function(){
+               $(this).remove();
+           });
+       }, 4000);
+   });    
+</script>
+@endpush
