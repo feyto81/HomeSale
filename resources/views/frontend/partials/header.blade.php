@@ -4,16 +4,16 @@
 			<div class="left-side">
 				<ul class="top-bar-menu">
 					<li><i class="fa fa-phone"></i> (123) 123-456 </li>
-					<li><i class="fa fa-envelope"></i> <a href="#">office@example.com</a></li>
+					<li><i class="fa fa-envelope"></i> <a href="#">office@homesale.com</a></li>
 					
 				</ul>
 			</div>
 			<div class="right-side">
 				<ul class="social-icons">
-					<li><a class="facebook" href="#"><i class="icon-facebook"></i></a></li>
-					<li><a class="twitter" href="#"><i class="icon-twitter"></i></a></li>
-					<li><a class="gplus" href="#"><i class="icon-gplus"></i></a></li>
-					<li><a class="pinterest" href="#"><i class="icon-pinterest"></i></a></li>
+					<li><a class="facebook" href="javascript::void(0)"><i class="icon-facebook"></i></a></li>
+					<li><a class="twitter" href="javascript::void(0)"><i class="icon-twitter"></i></a></li>
+					<li><a class="gplus" href="javascript::void(0)"><i class="icon-gplus"></i></a></li>
+					<li><a class="pinterest" href="javascript::void(0)"><i class="icon-pinterest"></i></a></li>
 				</ul>
 			</div>
 		</div>

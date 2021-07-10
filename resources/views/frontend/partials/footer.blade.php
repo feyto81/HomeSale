@@ -9,12 +9,12 @@
 			<div class="col-md-4 col-sm-6 ">
 				<h4>Helpful Links</h4>
 				<ul class="footer-links">
-					<li><a href="#">Login</a></li>
-					<li><a href="#">Sign Up</a></li>
-					<li><a href="#">My Account</a></li>
-					<li><a href="#">Add Property</a></li>
-					<li><a href="#">Pricing</a></li>
-					<li><a href="#">Privacy Policy</a></li>
+					<li><a href="javascript::void(0)">Login</a></li>
+					<li><a href="javascript::void(0)">Sign Up</a></li>
+					<li><a href="javascript::void(0)">My Account</a></li>
+					<li><a href="javascript::void(0)">Add Property</a></li>
+					<li><a href="javascript::void(0)">Pricing</a></li>
+					<li><a href="javascript::void(0)">Privacy Policy</a></li>
 				</ul>
 				
 				<div class="clearfix"></div>
@@ -24,7 +24,7 @@
 				<div class="text-widget">
 					<span>12345 Little Lonsdale St, Melbourne</span> <br>
 					Phone: <span>(123) 123-456 </span><br>
-					E-Mail:<span> <a href="#">office@example.com</a> </span><br>
+					E-Mail:<span> <a href="#">office@homesale.com</a> </span><br>
 				</div>
 				<ul class="social-icons margin-top-20">
 					<li><a class="facebook" href="#"><i class="icon-facebook"></i></a></li>

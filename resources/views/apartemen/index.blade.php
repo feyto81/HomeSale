@@ -60,7 +60,7 @@
                                     <td>{{$loop->iteration}}</td>
                                     <td>{{$row->name}}</td>
                                     <td><img src="{{asset('uploads/'.$row->thumbnail)}}" widht="50px" height="50px"></td>
-                                    <td>{{$row->price}}</td>
+                                    <td>@currency($row->price)</td>
                                     <td>
                                         <span class="new badge green" data-badge-caption="{{$row->status}}"></span>
                                     </td>
