@@ -52,7 +52,7 @@
             @endif
             
             <div class="row">
-              <form action="{{url('/admin/agen/save')}}" method="POST">
+              <form action="{{url('/admin/agen/save')}}" method="POST" enctype="multipart/form-data">
                 @csrf
                 <div class="col s12 m6 l6">
                   <div id="prefixes" class="card card card-default scrollspy">
@@ -83,6 +83,17 @@
                               <label for="no_wa">No Wa</label>
                             </div>
                           </div>
+                          <div class="row">
+                            <div class="file-field input-field">
+                                <div class="btn">
+                                    <span>Picture</span>
+                                    <input type="file" multiple name="picture">
+                                </div>
+                              <div class="file-path-wrapper">
+                                <input class="file-path validate" type="text" placeholder="Upload one or more files">
+                               </div>
+                            </div>
+                         </div>
                           <div class="row">
                             <div class="input-field col s12">
                               <textarea id="address" name="address" class="materialize-textarea"></textarea>

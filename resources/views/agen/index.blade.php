@@ -50,6 +50,7 @@
                               <th>Name</th>
                               <th>Email</th>
                               <th>Phone</th>
+                              <th>Picture</th>
                               <th>No Wa</th>
                               <th>Address</th>
                               <th>Action</th>
@@ -62,6 +63,7 @@
                                     <td>{{$row->name}}</td>
                                     <td>{{$row->email}}</td>
                                     <td>{{$row->phone}}</td>
+                                    <td><img src="{{asset('avatar_agen/'.$row->picture)}}" widht="50px" height="50px"></td>
                                     <td>{{$row->no_wa}}</td>
                                     <td>{{$row->address}}</td>
                                     

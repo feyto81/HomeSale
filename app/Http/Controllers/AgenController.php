@@ -2,8 +2,9 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Http\Request;
 use App\Agen;
+use Illuminate\Http\Request;
+use File;
 
 class AgenController extends Controller
 {
@@ -26,6 +27,7 @@ class AgenController extends Controller
             'phone' => 'required|min:3',
             'no_wa' => 'required|min:3',
             'address' => 'required|min:3',
+            'picture' => 'required',
 
         ]);
         $agen = new Agen;
@@ -34,6 +36,11 @@ class AgenController extends Controller
         $agen->phone = $request->phone;
         $agen->no_wa = $request->no_wa;
         $agen->address = $request->address;
+        $picture = $request->picture;
+        $tujuan_upload = 'avatar_agen';
+        $photo_name = time() . "_" . $picture->getClientOriginalName();
+        $picture->move($tujuan_upload, $photo_name);
+        $agen->picture = $photo_name;
         $result = $agen->save();
         if ($result) {
             // alert()->success('Customer Successfully Added', 'Success');
@@ -74,6 +81,14 @@ class AgenController extends Controller
         $agen->phone = $request->get('phone');
         $agen->no_wa = $request->get('no_wa');
         $agen->address = $request->get('address');
+        if ($request->file('picture') != '') {
+            File::delete('avatar_agen/' . $agen->picture);
+            $picture = $request->file('picture');
+            $tujuan_upload = 'avatar_agen';
+            $photo_name = time() . "_" . $picture->getClientOriginalName();
+            $picture->move($tujuan_upload, $photo_name);
+            $agen->picture = $photo_name;
+        }
         $result = $agen->save();
         if ($result) {
             return redirect('/admin/agen')->with('success', 'Agen successfully Updated');

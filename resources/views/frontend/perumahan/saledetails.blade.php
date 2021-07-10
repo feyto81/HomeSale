@@ -115,7 +115,7 @@
                     <br>
 					<div class="agent-widget">
 						<div class="agent-title">
-							<div class="agent-photo"><img src="{{asset('frontend/images/agent-avatar.jpg')}}" alt="" /></div>
+							<div class="agent-photo"><img src="{{asset('avatar_agen/'.$perumahan->Agen->picture)}}" alt="" /></div>
 							<div class="agent-details">
                                 <h4><a href="#">{{$perumahan->Agen->name}}</a></h4>
                                 <small><span>Anggota Sejak {{$perumahan->Agen->created_at->diffForHumans()}}</span></small>
